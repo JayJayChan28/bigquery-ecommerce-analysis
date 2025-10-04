@@ -32,7 +32,7 @@ Using SQL, I explored the data, identified duplicates, and built queries to extr
 ---
 
 ## 🧾 Queries & Insights
-### 1. Identify duplicate rows
+### 1. Identify duplicate rows in raw dataset all_sessions_raw
 ```sql
 SELECT COUNT(*) as num_duplicate_rows, * FROM
 `data-to-insights.ecommerce.all_sessions_raw`
@@ -40,20 +40,44 @@ GROUP BY
 fullVisitorId, channelGrouping, time, country, city, totalTransactionRevenue, transactions, timeOnSite, pageviews, sessionQualityDim, date, visitId, type, productRefundAmount, productQuantity, productPrice, productRevenue, productSKU, v2ProductName, v2ProductCategory, productVariant, currencyCode, itemQuantity, itemRevenue, transactionRevenue, transactionId, pageTitle, searchKeyword, pagePathLevel1, eCommerceAction_type, eCommerceAction_step, eCommerceAction_option
 HAVING num_duplicate_rows > 1;
 ```
-#### Insight: 615 duplicate rows
+#### Insight: 615 duplicate rows in the raw dataset
 
-### 2. Unique Visitors and Views
+### 2. Identify duplicate rows in dataset all_sessions
+```sql
+SELECT
+fullVisitorId, # the unique visitor ID
+visitId, # a visitor can have multiple visits
+date, # session date stored as string YYYYMMDD
+time, # time of the individual site hit  (can be 0 to many per visitor session)
+v2ProductName, # not unique since a product can have variants like Color
+productSKU, # unique for each product
+type, # a visitor can visit Pages and/or can trigger Events (even at the same time)
+eCommerceAction_type, # maps to ‘add to cart', ‘completed checkout'
+eCommerceAction_step,
+eCommerceAction_option,
+  transactionRevenue, # revenue of the order
+  transactionId, # unique identifier for revenue bearing transaction
+COUNT(*) as row_count
+FROM
+`data-to-insights.ecommerce.all_sessions`
+GROUP BY 1,2,3 ,4, 5, 6, 7, 8, 9, 10,11,12
+HAVING row_count > 1 # find duplicates
+```
+
+#### Insight: No duplicates in the all_sessions dataset, use this for main analysis
+
+### 3. Unique Visitors and Views
 ```sql
 SELECT
   COUNT(*) AS product_views,
   COUNT(DISTINCT fullVisitorId) AS unique_visitors
 FROM `data-to-insights.ecommerce.all_sessions`;
 ```
-![Alt text](images/filename.png)
+![Alt text](images/images/total_views.png)
 
 #### Insight: High repeat engagement — total views far exceed unique visitors.
 
-### 3. Unique Visitors by Channel
+### 4. Unique Visitors by Channel
 ```sql
 SELECT
   COUNT(DISTINCT fullVisitorId) AS unique_visitors,
@@ -64,7 +88,7 @@ ORDER BY channelGrouping DESC;
 ```
 #### Insight: Organic search and referrals outperform direct traffic in attracting new visitors.
 
-### 4. Distinct Product Names
+### 5. Distinct Product Names
 ```sql
 SELECT
   v2ProductName AS ProductName
@@ -74,7 +98,7 @@ ORDER BY ProductName;
 ```
 #### Insight: The catalog contained 633 unique products, primarily apparel, accessories, and branded items.
 
-### 5. Top 5 Most-Viewed Products
+### 6. Top 5 Most-Viewed Products
 ```sql
 SELECT
   COUNT(*) AS product_views,
@@ -87,7 +111,7 @@ LIMIT 5;
 ```
 #### Insight: T-shirts dominate visibility, but this doesn’t always translate to higher conversions.
 
-### 6. Top 5 Products by Unique Views per Visitor
+### 7. Top 5 Products by Unique Views per Visitor
 ```sql
 WITH unique_product_views_by_person AS (
   SELECT
@@ -108,7 +132,7 @@ LIMIT 5;
 
 #### Insight: Certain niche items gain stronger traction per visitor than raw page views suggest.
 
-### 7. Views, Orders, Quantities, and Avg Units per Order
+### 8. Views, Orders, Quantities, and Avg Units per Order
 ```sql
 SELECT
   COUNT(*) AS product_views,
