@@ -135,7 +135,7 @@ LIMIT 5;
 ```
 ![Alt text](images/no_double_count_product_views.png)
 
-#### Insight: Certain niche items gain stronger traction per visitor than raw page views suggest. Youtube Willcounts
+#### Insight: Certain niche items gain stronger traction per visitor than raw page views suggest. Youtube Twill counts have much more unique view counts, replacing the number 4 spot from google mens 100% cotton short sleve Hero Tee Black. 
 
 ### 8. Views, Orders, Quantities, and Avg Units per Order
 ```sql
