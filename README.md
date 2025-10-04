@@ -34,6 +34,7 @@ Using SQL, I explored the data, identified duplicates, and built queries to extr
 ## 🧾 Queries & Insights
 
 ### 1️⃣ Unique Visitors and Views
+```sql
 SELECT
   COUNT(*) AS product_views,
   COUNT(DISTINCT fullVisitorId) AS unique_visitors
@@ -42,6 +43,7 @@ FROM `data-to-insights.ecommerce.all_sessions`;
 ### Insight: High repeat engagement — total views far exceed unique visitors.
 
 ### 1️⃣ Unique Visitors and Views
+```sql
 SELECT
   COUNT(DISTINCT fullVisitorId) AS unique_visitors,
   channelGrouping
