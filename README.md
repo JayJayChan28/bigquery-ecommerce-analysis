@@ -154,7 +154,7 @@ LIMIT 5;
 
 ---
 
-#### **Insight: ** Youtube Custom Decals has the highest quantity of products ordered but the google Hero Tee White has more unique orders in gnereal. This suggests Youtube Custom Decals has a much higher bulk order rate. 
+#### Insight: Youtube Custom Decals has the highest quantity of products ordered but the google Hero Tee White has more unique orders in general. This suggests Youtube Custom Decals has a much higher bulk order rate. 
 
 ### 9. Expand previous query to include the total number of distinct products
 ```sql
@@ -172,8 +172,7 @@ LIMIT 5;
 ```
 ![Alt text](images/avg_amount_product_per_order.png)
 
-#### Insight:
-- The 22 oz YouTube Bottle Infuser had the highest average order size (~9.4 units/order).
+#### Insight: The 22 oz YouTube Bottle Infuser had the highest average order size (~9.4 units/order), this indicates that people buying this product tend to order in bulk. Many of the tee's/apparel are have low avg quanitity per order, but has a lot of orders showing that these purchases are typically not bulk one order purchases. 
 - Apparel drove visibility but not bulk revenue.
 
   
