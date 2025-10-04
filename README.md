@@ -143,8 +143,7 @@ SELECT
   COUNT(*) AS product_views,
   COUNT(productQuantity) AS orders,
   SUM(productQuantity) AS quantity_product_ordered,
-  SUM(productQuantity) / COUNT(productQuantity) AS avg_per_order,
-  v2ProductName AS ProductName
+  v2ProductName
 FROM `data-to-insights.ecommerce.all_sessions`
 WHERE type = 'PAGE'
 GROUP BY v2ProductName
@@ -155,11 +154,29 @@ LIMIT 5;
 
 ---
 
+#### **Insight: ** Youtube Custom Decals has the highest quantity of products ordered but the google Hero Tee White has more unique orders in gnereal. This suggests Youtube Custom Decals has a much higher bulk order rate. 
+
+### 9. Expand previous query to include the total number of distinct products
+```sql
+SELECT
+  COUNT(*) AS product_views,
+  COUNT(productQuantity) AS orders,
+  SUM(productQuantity) AS quantity_product_ordered,
+  SUM(productQuantity) / COUNT(productQuantity) AS avg_per_order,
+  (v2ProductName) AS ProductName
+FROM `data-to-insights.ecommerce.all_sessions`
+WHERE type = 'PAGE'
+GROUP BY v2ProductName
+ORDER BY product_views DESC
+LIMIT 5;
+```
+![Alt text](images/avg_amount_product_per_order.png)
+
 #### Insight:
 - The 22 oz YouTube Bottle Infuser had the highest average order size (~9.4 units/order).
 - Apparel drove visibility but not bulk revenue.
 
----
+  
 ## 📌 Key Findings
 
 - **633 distinct products** identified in the catalog.  
