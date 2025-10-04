@@ -118,3 +118,29 @@ LIMIT 5;
 - Apparel drove visibility but not bulk revenue.
 
 ---
+## 📌 Key Findings
+
+- **633 distinct products** identified in the catalog.  
+- **Organic and referral channels** outperform direct traffic in acquiring unique visitors.  
+- **High visibility ≠ high sales** — bulk items outperform in per-order revenue efficiency.  
+- **Data cleaning (deduplication)** is essential for reliable KPIs.  
+
+---
+
+## 💡 Business Recommendations
+
+1. **Product Strategy**
+   - Push **bulk-friendly products** (e.g., Bottle Infuser) with bundle pricing and upsell opportunities.  
+   - Use **time-limited promotions** for high-visibility but low-conversion apparel to boost urgency.  
+
+2. **Channel Strategy**
+   - Invest more in **SEO and affiliate marketing** since organic/referral drive unique traffic.  
+   - Strengthen direct traffic performance with **loyalty programs** and **personalized retargeting**.  
+
+3. **Customer Engagement**
+   - Use recommendation engines to highlight **high-order niche products**.  
+   - Target **repeat visitors** with personalized cross-sell campaigns.  
+
+4. **Data & Analytics**
+   - Maintain **deduplication checks** in pipelines to avoid inflated metrics.  
+   - Build real-time **dashboards** comparing traffic efficiency and product conversions.  
