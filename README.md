@@ -111,7 +111,10 @@ GROUP BY v2ProductName
 ORDER BY product_views DESC
 LIMIT 5;
 ```
+---
 
 #### Insight:
-#### - The 22 oz YouTube Bottle Infuser had the highest average order size (~9.4 units/order).
-#### - Apparel drove visibility but not bulk revenue.
+- The 22 oz YouTube Bottle Infuser had the highest average order size (~9.4 units/order).
+- Apparel drove visibility but not bulk revenue.
+
+---
