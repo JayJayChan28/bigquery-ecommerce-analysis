@@ -40,6 +40,7 @@ GROUP BY
 fullVisitorId, channelGrouping, time, country, city, totalTransactionRevenue, transactions, timeOnSite, pageviews, sessionQualityDim, date, visitId, type, productRefundAmount, productQuantity, productPrice, productRevenue, productSKU, v2ProductName, v2ProductCategory, productVariant, currencyCode, itemQuantity, itemRevenue, transactionRevenue, transactionId, pageTitle, searchKeyword, pagePathLevel1, eCommerceAction_type, eCommerceAction_step, eCommerceAction_option
 HAVING num_duplicate_rows > 1;
 ```
+![Alt text](images/Num_duplicates.png)
 #### Insight: 615 duplicate rows in the raw dataset
 
 ### 2. Identify duplicate rows in dataset all_sessions
@@ -86,6 +87,7 @@ FROM `data-to-insights.ecommerce.all_sessions`
 GROUP BY channelGrouping
 ORDER BY channelGrouping DESC;
 ```
+![Alt text](images/total_unique_visitors.png)
 #### Insight: Organic search and referrals outperform direct traffic in attracting new visitors.
 
 ### 5. Distinct Product Names
@@ -96,6 +98,7 @@ FROM `data-to-insights.ecommerce.all_sessions`
 GROUP BY ProductName
 ORDER BY ProductName;
 ```
+![Alt text](images/unique_product_names.png)
 #### Insight: The catalog contained 633 unique products, primarily apparel, accessories, and branded items.
 
 ### 6. Top 5 Most-Viewed Products
@@ -109,6 +112,7 @@ GROUP BY v2ProductName
 ORDER BY product_views DESC
 LIMIT 5;
 ```
+![Alt text](images/product_views_per_product.png)
 #### Insight: T-shirts dominate visibility, but this doesn’t always translate to higher conversions.
 
 ### 7. Top 5 Products by Unique Views per Visitor
@@ -129,6 +133,7 @@ GROUP BY ProductName
 ORDER BY unique_view_count DESC
 LIMIT 5;
 ```
+![Alt text](images/no_double_count_product_views.png)
 
 #### Insight: Certain niche items gain stronger traction per visitor than raw page views suggest.
 
@@ -146,6 +151,8 @@ GROUP BY v2ProductName
 ORDER BY product_views DESC
 LIMIT 5;
 ```
+![Alt text](images/total_distinct_and_units_ordered.png)
+
 ---
 
 #### Insight:
