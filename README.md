@@ -51,7 +51,7 @@ FROM `data-to-insights.ecommerce.all_sessions`
 GROUP BY channelGrouping
 ORDER BY channelGrouping DESC;
 ```
-### Insight: Organic search and referrals outperform direct traffic in attracting new visitors.
+#### Insight: Organic search and referrals outperform direct traffic in attracting new visitors.
 
 ### 3️⃣ Distinct Product Names
 ```sql
@@ -61,7 +61,7 @@ FROM `data-to-insights.ecommerce.all_sessions`
 GROUP BY ProductName
 ORDER BY ProductName;
 ```
-### Insight: The catalog contained 633 unique products, primarily apparel, accessories, and branded items.
+#### Insight: The catalog contained 633 unique products, primarily apparel, accessories, and branded items.
 
 ### 4️⃣ Top 5 Most-Viewed Products
 ```sql
@@ -74,7 +74,7 @@ GROUP BY v2ProductName
 ORDER BY product_views DESC
 LIMIT 5;
 ```
-### Insight: T-shirts dominate visibility, but this doesn’t always translate to higher conversions.
+#### Insight: T-shirts dominate visibility, but this doesn’t always translate to higher conversions.
 
 ### 5️⃣ Top 5 Products by Unique Views per Visitor
 ```sql
@@ -95,7 +95,7 @@ ORDER BY unique_view_count DESC
 LIMIT 5;
 ```
 
-### Insight: Certain niche items gain stronger traction per visitor than raw page views suggest.
+#### Insight: Certain niche items gain stronger traction per visitor than raw page views suggest.
 
 ### 6️⃣ Views, Orders, Quantities, and Avg Units per Order
 ```sql
@@ -112,7 +112,6 @@ ORDER BY product_views DESC
 LIMIT 5;
 ```
 
-### Insight:
-### - The 22 oz YouTube Bottle Infuser had the highest average order size (~9.4 units/order).
-
-### - Apparel drove visibility but not bulk revenue.
+#### Insight:
+#### - The 22 oz YouTube Bottle Infuser had the highest average order size (~9.4 units/order).
+#### - Apparel drove visibility but not bulk revenue.
