@@ -135,7 +135,7 @@ LIMIT 5;
 ```
 ![Alt text](images/no_double_count_product_views.png)
 
-#### Insight: Certain niche items gain stronger traction per visitor than raw page views suggest.
+#### Insight: Certain niche items gain stronger traction per visitor than raw page views suggest. Youtube Willcounts
 
 ### 8. Views, Orders, Quantities, and Avg Units per Order
 ```sql
