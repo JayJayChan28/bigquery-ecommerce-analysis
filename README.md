@@ -43,7 +43,7 @@ FROM `data-to-insights.ecommerce.all_sessions`;
 ### Insight: High repeat engagement — total views far exceed unique visitors.
 
 ### 1️⃣ Unique Visitors and Views
-```sql
+
 SELECT
   COUNT(DISTINCT fullVisitorId) AS unique_visitors,
   channelGrouping
