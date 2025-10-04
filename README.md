@@ -53,7 +53,7 @@ FROM `data-to-insights.ecommerce.all_sessions`;
 
 #### Insight: High repeat engagement — total views far exceed unique visitors.
 
-### 2️⃣ Unique Visitors by Channel
+### 3. Unique Visitors by Channel
 ```sql
 SELECT
   COUNT(DISTINCT fullVisitorId) AS unique_visitors,
@@ -64,7 +64,7 @@ ORDER BY channelGrouping DESC;
 ```
 #### Insight: Organic search and referrals outperform direct traffic in attracting new visitors.
 
-### 3️⃣ Distinct Product Names
+### 4. Distinct Product Names
 ```sql
 SELECT
   v2ProductName AS ProductName
@@ -74,7 +74,7 @@ ORDER BY ProductName;
 ```
 #### Insight: The catalog contained 633 unique products, primarily apparel, accessories, and branded items.
 
-### 4️⃣ Top 5 Most-Viewed Products
+### 5. Top 5 Most-Viewed Products
 ```sql
 SELECT
   COUNT(*) AS product_views,
@@ -87,7 +87,7 @@ LIMIT 5;
 ```
 #### Insight: T-shirts dominate visibility, but this doesn’t always translate to higher conversions.
 
-### 5️⃣ Top 5 Products by Unique Views per Visitor
+### 6. Top 5 Products by Unique Views per Visitor
 ```sql
 WITH unique_product_views_by_person AS (
   SELECT
@@ -108,7 +108,7 @@ LIMIT 5;
 
 #### Insight: Certain niche items gain stronger traction per visitor than raw page views suggest.
 
-### 6️⃣ Views, Orders, Quantities, and Avg Units per Order
+### 7. Views, Orders, Quantities, and Avg Units per Order
 ```sql
 SELECT
   COUNT(*) AS product_views,
