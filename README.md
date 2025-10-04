@@ -73,7 +73,7 @@ SELECT
   COUNT(DISTINCT fullVisitorId) AS unique_visitors
 FROM `data-to-insights.ecommerce.all_sessions`;
 ```
-![Alt text](images/images/total_views.png)
+![Alt text](images/total_views.png)
 
 #### Insight: High repeat engagement — total views far exceed unique visitors.
 
