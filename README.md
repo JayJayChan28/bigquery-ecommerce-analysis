@@ -40,7 +40,7 @@ SELECT
   COUNT(DISTINCT fullVisitorId) AS unique_visitors
 FROM `data-to-insights.ecommerce.all_sessions`;
 ```
-### Insight: High repeat engagement — total views far exceed unique visitors.
+#### Insight: High repeat engagement — total views far exceed unique visitors.
 
 ### 2️⃣ Unique Visitors by Channel
 ```sql
